@@ -13,6 +13,9 @@ BOT_NAME = 'News'
 SPIDER_MODULES = ['News.spiders']
 NEWSPIDER_MODULE = 'News.spiders'
 
+# NEWS TYPE SETTINGS
+TYPE_LIST         =  # ['wh','mil','gj','yl','ty','jk','sh','hr','fortune','cj','it','ny','ga','estate','auto','tw']
+
 # SPIDERS DATE SETTINGS
 BEGIN_DATE        =  # '20120601'
 END_DATE          =  # '20170728'
