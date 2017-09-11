@@ -20,14 +20,12 @@ class NewsSpider(CrawlSpider):
             Rule(LinkExtractor(allow = ('chinanews.com\/\w+\/\d{4}\/\d{2}-\d{2}\/\d+.shtml',), deny = ('chinanews.com\/tp\/\d{4}\/\d{2}-\d{2}\/\d+.shtml',)), callback = 'parse_info', follow = False),
             )
 
-
-    type_list = ['wh','mil','gj','yl','ty','jk','sh','hr','fortune','cj','it','ny','ga','estate','auto','tw']
-
     def __init__(self, *a, **kw):
         super(CrawlSpider, self).__init__(*a, **kw)
         self.settings = get_project_settings()
         self.begin_date      = self.settings['BEGIN_DATE']
         self.end_date        = self.settings['END_DATE']
+        self.type_list       = self.settings['TYPE_LIST']
         self._compile_rules()
         self.start_urls      = self.Start_urls()
 
